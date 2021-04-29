@@ -14,7 +14,9 @@ def main():
     reader = Reader(book_path)
     reader.main()
 
-    print(reader.word_counts)
+    print(str(reader.word_counts))
+    print("Average word length: " + str(reader.average_length))
+    print("Most common word: " + str(reader.most_common_word))
 
 
 if __name__ == "__main__":
