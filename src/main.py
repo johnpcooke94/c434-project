@@ -127,8 +127,8 @@ def multithreaded_read(book_file_name):
     thread_list = []
 
     # Create as many threads as are available on the machine
-    for i in range(6):
-        new_thread = threading.Thread(target=read_book, args=(book_path, 6, i, thread_stats),
+    for i in range(os.cpu_count()):
+        new_thread = threading.Thread(target=read_book, args=(book_path, os.cpu_count(), i, thread_stats),
                                       name=i)
         thread_list.append(new_thread)
 
